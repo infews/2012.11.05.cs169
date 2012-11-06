@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>2012.11.05.cs169</title>
+    <meta charset='utf-8' />
+    <meta content='width=1024, user-scalable=no' name='viewport' />
+    <!-- deck.js's core css -->
+    <link href="deck.js/core/deck.core.css" rel="stylesheet" type="text/css"/>
+    <!-- deck.js extension CSS files -->
+    <link href="deck.js/extensions/codemirror/deck.codemirror.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/goto/deck.goto.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/hash/deck.hash.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/menu/deck.menu.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/navigation/deck.navigation.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/scale/deck.scale.css" rel="stylesheet" type="text/css"/>
+    <link href="deck.js/extensions/status/deck.status.css" rel="stylesheet" type="text/css"/>
+    <!-- all css in the css dir: Keydown CSS, your custom CSS, and themes from deck.js -->
+    <link href="css/keydown.css" rel="stylesheet" type="text/css"/>
+    <link href="css/2012.11.05.cs169.css" rel="stylesheet" type="text/css"/>
+    <link href="css/default.css" rel="stylesheet" type="text/css"/>
+    <link href="css/horizontal-slide.css" rel="stylesheet" type="text/css"/>
+    <!-- Modernizr (provided for legacy browsers) -->
+    <script src="deck.js/support/modernizr.custom.js" type="text/javascript"></script>
+  </head>
+  <body class='deck-container keydown'>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>JavaScript in your Rails</h1>
+        
+        <br/>
+        
+        
+        <p>dwfrank@pivotallabs.com | @dwfrank | github.com/infews</p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>1. Why JS?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Web apps serve HTML documents</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/html_1.jpg" alt="HTML 1" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Enter JS and the DOM</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Another Language??</h1>
+        
+        <h2>Browsers' programmatic interface</h2>
+        
+        <h2>"Enhance" the page</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Examples</h1>
+        
+        <ul>
+        <li><a href="http://www.romneytaxplan.com/">"Romney Tax Plan"</a></li>
+        <li><a href="http://xkcd.com/1110/">XKCD: <em>Click and Drag</em></a></li>
+        <li><a href="http://www.apple.com/iphone/design/">Apple iPhone5 Design 'videos'</a> and <a href="https://docs.google.com/document/pub?id=1GWTMLjqQsQS45FWwqNG9ztQTdGF48hQYpjQHR_d1WsI">how it works</a></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bottom-left full-background rhino slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Learning JS</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h2>Listen to an event</h2>
+
+<h2>Execute a <code>function</code></h2>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <p><textarea class='code' display='none' mode='javascript'>function renameUser() {&#x000A;  var nameElements = document.getElementsByClassName('username');&#x000A;  for (var i=0; i< nameElements.length; i++) {&#x000A;    var el = nameElements[i];&#x000A;    el.innerHTML = "Armando";&#x000A;  }&#x000A;}&#x000A;var button = document.getElementById("name-changer");&#x000A;button.addEventListener('click', renameUser);</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/html_2.jpg" alt="HTML 2" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>So What?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>2. A Brief History of AJAX</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/owa.gif" alt="Outlook" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <p><textarea class='code' display='none' mode='javascript'>var xhr = new XMLHttpRequest();&#x000A;xhr.open("GET", "/user/new", true);&#x000A;xhr.onreadystatechange = function() {&#x000A; if (xhr.readyState == 4) {&#x000A;  // success! play with properties&#x000A; }&#x000A;};&#x000A;xhr.send();</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Interact with the server</h1>
+        
+        <br/>
+        
+        
+        <h2>Show results to the user</h2>
+        
+        <h2><em>on the same page</em></h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/html_3.jpg" alt="HTML 3" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/html_4.jpg" alt="HTML 4" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Better Examples</h1>
+        
+        <ul>
+        <li><a href="http://twitter.com">Twitter</a></li>
+        <li><a href="http://nytimes.com/chrome">NYTimes Skimmer</a></li>
+        <li><a href="http://espn.com/scfeed">ESPN SC Feed</a></li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Our Document Evolves</h1>
+        
+        <ul>
+        <li>Static Document</li>
+        <li>Fun interactive things</li>
+        <li>Snappier UI response</li>
+        <li>Applications - "single page apps" is the buzzphrase</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>3. JavaScript on its own</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='bottom-left full-background rhino slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Remember me?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='full-background rhino_index slide top-left'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Ugh.</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='full-background goodparts slide top-left'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>README</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>What about DOM?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/jQuery_logo_color_onwhite.png" alt="jQuery" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>CSS notation for finding elements</h1>
+
+<ul>
+<li><code>#</code> for ID
+
+<ul>
+<li><code>#mybutton</code></li>
+<li><code>#update</code></li>
+</ul>
+</li>
+<li><code>.</code> for classnames
+
+<ul>
+<li><code>.username</code></li>
+<li><code>.location</code></li>
+</ul>
+</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Before</h1>
+    
+    <p><textarea class='code' display='none' mode='javascript'>function renameUser() {&#x000A;  var nameElements = document.getElementsByClassName('username');&#x000A;  for (var i=0; i< nameElements.length; i++) {&#x000A;    var el = nameElements[i];&#x000A;    el.innerHTML = "Armando";&#x000A;  }&#x000A;}&#x000A;var button = document.getElementById("name-changer");&#x000A;button.addEventListener('click', renameUser);</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>After</h1>
+    
+    <p><textarea class='code' display='none' mode='javascript'>$('#name-changer').click(function() {&#x000A;  $('.username').each(function() {&#x000A;    $(this).text("Armando");&#x000A;  });&#x000A;});</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Before</h1>
+    
+    <p><textarea class='code' display='none' mode='javascript'>var xhr = new XMLHttpRequest();&#x000A;xhr.open("GET", "/user/new", true);&#x000A;xhr.onreadystatechange = function() {&#x000A; if (xhr.readyState == 4) {&#x000A;  // success! play with properties&#x000A; }&#x000A;};&#x000A;xhr.send();</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>After</h1>
+    
+    <p><textarea class='code' display='none' mode='javascript'>$.ajax({&#x000A;  url: "/user/new"&#x000A;}).done(function(data) {&#x000A;  // success! play with properties&#x000A;}).error(function() {&#x000A;  console.error('whoops');&#x000A;});</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/html_5.jpg" alt="HTML 5" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/jQuery_logo_color_onwhite.png" alt="jQuery" /></p>
+        
+        <h2>It's a framework!</h2>
+        
+        <h2>It's a browser API adapter!</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>4. What about testing?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/jasmine_logo.png" alt="Jasmine" /></p>
+        
+        <h2>Making JS safe for Rubyists since 2008</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <p><textarea class='code' display='none' mode='javascript'>describe("Deck", function() {&#x000A;  var deck;&#x000A;&#x000A;  describe("with jokers", function() {&#x000A;    beforeEach(function() {&#x000A;      deck = new Deck({jokers: true});&#x000A;    });&#x000A;&#x000A;    it("should have the correct count of cards", function() {&#x000A;      expect(deck.count).toEqual(54);&#x000A;    });&#x000A;  });&#x000A;&#x000A;  describe("without jokers", function() {&#x000A;    beforeEach(function() {&#x000A;      deck = new Deck({jokers: false});&#x000A;    });&#x000A;&#x000A;    it("should have the correct count of cards", function() {&#x000A;      expect(deck.count).toEqual(52);&#x000A;    });&#x000A;  });&#x000A;});</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Other Jasmine goodies</h1>
+        
+        <ul>
+        <li>Mock clock</li>
+        <li>Spies for test doubles</li>
+        <li>AJAX faking (<a href="http://github.com/pivotal/jasmine-ajax">Jasmine AJAX</a>)</li>
+        <li>Custom Matchers</li>
+        <li>Async test support</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="http://pivotal.github.com/jasmine/">Tutorial Page</a></h1>
+        
+        <h2>Has the full interface</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/Jasmine_runner.png" alt="Jasmine Runner" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>5. Rails &amp;&amp; JS</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/html_5.jpg" alt="HTML 5" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Server-side</h1>
+        
+        <ul>
+        <li>receive an HTTP request</li>
+        <li>query for some data</li>
+        <li>render some templates from the data</li>
+        <li>return text</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Client-side</h1>
+        
+        <ul>
+        <li>make an HTTP request</li>
+        <li>get some data</li>
+        <li>build some nodes from the data</li>
+        <li>show it to the user</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>JavaScript is 1st class code</h1>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Asset Pipeline FTW!</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Features</h1>
+        
+        <ul>
+        <li>concatenation</li>
+        <li>include order</li>
+        <li>packages of JS</li>
+        <li>minification</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/ap_dirs.png" alt="Asset Pipeline Directories" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/html_6.jpg" alt="HTML 6" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Jasmine-supported</h1>
+        
+        <h2>Via Jasmine Gem</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Rails Controllers?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Before</h1>
+    
+    <p><textarea class='code' display='none' mode='ruby'>class StuffController < ActionController:Base&#x000A;  def show&#x000A;    @stuff = Stuff.find(params[:id])&#x000A;  end&#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>After</h1>
+    
+    <p><textarea class='code' display='none' mode='ruby'>class StuffController < ActionController:Base&#x000A;  def show&#x000A;    @stuff = Stuff.find(params[:id])&#x000A;	render :json => @stuff&#x000A;  end&#x000A;end</textarea>
+</p>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="http://json.org">JSON</a> for API responses</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Your App is/as an API</h1>
+        
+        <h2>Think about REST</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='full-background rest slide top-left'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Design Your Resources</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Extra credit Ruby</h1>
+
+<h2>Clean up your Controllers &amp; Models with:</h2>
+
+<ul>
+<li>Query Objects</li>
+<li>Presenters</li>
+<li>Responders</li>
+<li>Other PORO's</li>
+</ul>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>6. How to <em>write</em> your JS?</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h2>Front-end Frameworks</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="http://backbonejs.org">Backbone.js</a></h1>
+        
+        <ul>
+        <li>Lightweight</li>
+        <li>Router for URL-to-function map</li>
+        <li>Model, Collection &amp; View objects</li>
+        <li>Works <em>very</em> well with Rails</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="http://emberjs.com">Ember</a></h1>
+        
+        <ul>
+        <li>More App-like</li>
+        <li>MVC-ish</li>
+        <li>Data-binding - model update triggers DOM update</li>
+        <li>Still early</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="http://angularjs.org/">Angular</a></h1>
+        
+        <ul>
+        <li>"New" from Google</li>
+        <li>Data-binding, but lighter-weight than Ember</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><a href="http://enyojs.com">Enyo</a></h1>
+        
+        <ul>
+        <li>Written for HP/Palm TouchPad</li>
+        <li>DOM is declarative</li>
+        <li>Has optional data-binding-like concepts</li>
+        <li>Can be used as a UI-Control layer</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <p><img src="images/framework_search.png" alt="search" /></p>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Part the Last</h1>
+        
+        <h2>Wrap up</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>JS is the top of the stack</h1>
+        
+        <h2>Make users happy</h2>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='left slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>JavaScript can have...</h1>
+        
+        <ul>
+        <li>inheritance</li>
+        <li>composition</li>
+        <li>encapsulation</li>
+        <li>abstraction</li>
+        <li>design patterns</li>
+        </ul>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1><strong>Tests</strong></h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>The DOM is not that hard</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <section class='slide'>
+  <div class='spacer top'></div>
+  <div class='content'>
+    <h1>Your JS is (part of) the app</h1>
+
+<h2>Treat it like the rest of the code</h2>
+  </div>
+  <div class='spacer bottom'></div>
+</section>
+    <section class='slide'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>THANKS!</h1>
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+    <!-- deck.js navigation extension -->
+    <a class='deck-prev-link' href='#' title='Previous'>&#8592;</a>
+    <a class='deck-next-link' href='#' title='Next'>&#8594;</a>
+    <!-- deck.js hash extension -->
+    <a class='deck-permalink' href='.' title='Permalink to this slide'>#</a>
+    <!-- deck.js status extension -->
+    <p class='deck-status'>
+      <span class='deck-status-current'></span>
+      /
+      <span class='deck-status-total'></span>
+    </p>
+    <!-- jQuery & deck.js -->
+    <script src="deck.js/support/jquery.1.6.4.min.js" type="text/javascript"></script>
+    <script src="deck.js/core/deck.core.js" type="text/javascript"></script>
+    <!-- deck.js extension JS files -->
+    <script src="deck.js/extensions/codemirror/codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/deck.codemirror.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/clike/clike.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/clojure/clojure.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/coffeescript/coffeescript.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/css/css.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/diff/diff.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/haskell/haskell.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/htmlmixed/htmlmixed.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/lua/lua.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/php/php.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/plsql/plsql.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/python/python.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/r/r.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/rst/rst.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/ruby/ruby.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/scheme/scheme.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/smalltalk/smalltalk.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/sparql/sparql.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/stex/stex.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/velocity/velocity.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/xml/xml.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/xmlpure/xmlpure.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/codemirror/mode/yaml/yaml.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/goto/deck.goto.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/hash/deck.hash.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/menu/deck.menu.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/navigation/deck.navigation.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/scale/deck.scale.js" type="text/javascript"></script>
+    <script src="deck.js/extensions/status/deck.status.js" type="text/javascript"></script>
+    <!-- your custom JS here, including call to initialize deck.js-codemirror -->
+    <script src="js/2012.11.05.cs169.js" type="text/javascript"></script>
+    <!-- Initialize the deck. -->
+    <script type='text/javascript'>
+      $(function() { $.deck('.slide'); });
+    </script>
+  </body>
+</html>
